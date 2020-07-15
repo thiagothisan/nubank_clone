@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nubank_clone/pages/widgets/item_menu_bottom.dart';
 import 'package:nubank_clone/pages/widgets/menu_app.dart';
 import 'package:nubank_clone/pages/widgets/my_app_bar.dart';
 import 'package:nubank_clone/pages/widgets/my_dots_app.dart';
@@ -97,6 +98,41 @@ class _HomePageState extends State<HomePage> {
             top: _screenHeigth * .70,
             currentIndex: _currentIndex,
             showMenu: _showMenu,
+          ),
+          AnimatedPositioned(
+            duration: Duration(milliseconds: 200),
+            bottom: !_showMenu ? 0 + MediaQuery.of(context).padding.bottom : 0,
+            left: 0,
+            right: 0,
+            height: _screenHeigth * 0.18,
+            child: AnimatedOpacity(
+              duration: Duration(milliseconds: 200),
+              opacity: !_showMenu ? 1 : 0,
+              child: Container(
+                child: ListView(
+                  physics: BouncingScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  children: <Widget>[
+                    ItemMenuBotoom(
+                        icon: Icons.person_add, text: 'Indicar amigos'),
+                    ItemMenuBotoom(
+                        icon: Icons.phone_android, text: 'Recarga de celular'),
+                    ItemMenuBotoom(icon: Icons.chat, text: 'Cobrar'),
+                    ItemMenuBotoom(
+                        icon: Icons.monetization_on, text: 'Empréstimos'),
+                    ItemMenuBotoom(
+                        icon: Icons.move_to_inbox, text: 'Depositar'),
+                    ItemMenuBotoom(
+                        icon: Icons.mobile_screen_share, text: 'Transferir'),
+                    ItemMenuBotoom(icon: Icons.tune, text: 'Ajustat limite'),
+                    ItemMenuBotoom(
+                        icon: Icons.chrome_reader_mode, text: 'Pagar'),
+                    ItemMenuBotoom(
+                        icon: Icons.lock_open, text: 'Bloquear cartão'),
+                  ],
+                ),
+              ),
+            ),
           ),
         ],
       ),
