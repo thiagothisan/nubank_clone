@@ -11,7 +11,7 @@ class ItemMenuBotoom extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12.0),
       child: Container(
-        width: 82,
+        width: MediaQuery.of(context).size.width * 0.22,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           color: Colors.white24,
