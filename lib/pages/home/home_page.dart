@@ -51,6 +51,11 @@ class _HomePageState extends State<HomePage> {
           BottomMenu(
             showMenu: _showMenu,
           ),
+          MyDotsApp(
+            top: _screenHeigth * .75,
+            currentIndex: _currentIndex,
+            showMenu: _showMenu,
+          ),
           PageViewApp(
             showMenu: _showMenu,
             top: _yPosition,
@@ -97,11 +102,6 @@ class _HomePageState extends State<HomePage> {
                 }
               });
             },
-          ),
-          MyDotsApp(
-            top: _screenHeigth * .70,
-            currentIndex: _currentIndex,
-            showMenu: _showMenu,
           ),
         ],
       ),

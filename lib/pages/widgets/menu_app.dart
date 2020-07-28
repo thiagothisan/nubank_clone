@@ -131,7 +131,10 @@ class MenuApp extends StatelessWidget {
                           onPressed: () {},
                           child: Text(
                             'SAIR DA CONTA',
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
