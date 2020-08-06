@@ -24,24 +24,15 @@ class _PageViewAppState extends State<PageViewApp> {
   @override
   void initState() {
     super.initState();
-    _tween = Tween<double>(begin: 150.0, end: 150.0);
-    delayAnimation();
-  }
-
-  Future<void> delayAnimation() async {
-    await Future.delayed(Duration(seconds: 1), () {
-      setState(() {
-        _tween = Tween<double>(begin: 150.0, end: 0);
-      });
-    });
+    _tween = Tween<double>(begin: 150.0, end: 0.0);
   }
 
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder<double>(
         tween: _tween,
-        duration: Duration(milliseconds: 250),
-        curve: Curves.easeOutCirc,
+        duration: Duration(milliseconds: 300),
+        curve: Curves.easeOutExpo,
         builder: (context, value, child) {
           return AnimatedPositioned(
             duration: Duration(milliseconds: 250),
